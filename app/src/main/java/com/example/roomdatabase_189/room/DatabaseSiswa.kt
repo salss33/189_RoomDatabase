@@ -7,6 +7,8 @@ import androidx.room.RoomDatabase
 import kotlinx.coroutines.selects.SelectInstance
 
 @Database(entities = [Siswa::class], version = 1, exportSchema = false)
-abstract class DatabaseSiswa{
+abstract class DatabaseSiswa : RoomDatabase(){
+    abstract  fun  siswaDao() : SiswaDao
+
 
 }
