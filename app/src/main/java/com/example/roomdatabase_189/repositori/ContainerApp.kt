@@ -14,6 +14,13 @@ class ContainerDataApp(private val  context: Context):
                 OfflineRepositoriSiswa(
                     siswaDao = DatabaseSiswa.getDatabase(context).siswaDao())
             }
+        }
+class AplikasiSiswa : Application() {
+    lateinit var container: ContainerApp
 
+    override fun onCreate() {
+        super.onCreate()
+        container = ContainerDataApp(context=this)
+    }
 }
 
